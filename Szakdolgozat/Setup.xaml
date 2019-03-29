@@ -1,0 +1,31 @@
+﻿<Window x:Class="Szakdolgozat.Setup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Szakdolgozat"
+        mc:Ignorable="d"
+        Title="Setup" Height="322.682" Width="396.821" ResizeMode="NoResize" Closed="Window_Closed">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="196*"/>
+            <ColumnDefinition Width="193*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Server cím*:" HorizontalAlignment="Left" Margin="113,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="Server port:" HorizontalAlignment="Left" Margin="115,51,0,0" VerticalAlignment="Top"/>
+        <Label Content="Adatbázis név*:" HorizontalAlignment="Left" Margin="95,82,0,0" VerticalAlignment="Top"/>
+        <Label Content="Adatbázis felhasználónév*:" HorizontalAlignment="Left" Margin="38,113,0,0" VerticalAlignment="Top"/>
+        <Label Content="Adatbázis jelszó:" HorizontalAlignment="Left" Margin="91,144,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="SetupHelpButton" Content="Segítség" HorizontalAlignment="Left" Margin="52,187,0,0" VerticalAlignment="Top" Width="75" TabIndex="5"/>
+        <TextBox x:Name="SetupServerCimTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="0" AutomationProperties.HelpText="asd"/>
+        <TextBox x:Name="SetupServerPortTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="1"/>
+        <TextBox x:Name="SetupAdatbazisNevTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="2"/>
+        <TextBox x:Name="SetupAdatbazisFelhasznaloTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="3"/>
+        <Button x:Name="SetupKapcsolodasButton" Content="Kapcsolódás" Grid.Column="1" HorizontalAlignment="Left" Margin="55,187,0,0" VerticalAlignment="Top" Width="75" TabIndex="8" Click="SetupKapcsolodasButton_Click"/>
+        <PasswordBox x:Name="SetupAdatbazisPasswordBox" HorizontalAlignment="Left" Margin="10,147,0,0" VerticalAlignment="Top" Width="120" Height="23" Grid.Column="1" TabIndex="4"/>
+        <Button x:Name="SetupTesztButton" Grid.ColumnSpan="2" Content="Tesztelés" HorizontalAlignment="Left" Margin="152,187,0,0" VerticalAlignment="Top" Width="75" TabIndex="7" Click="SetupTesztButton_Click"/>
+        <ProgressBar x:Name="SetupProgressBar" HorizontalAlignment="Left" Height="20" Margin="52,222,0,0" VerticalAlignment="Top" Width="275" Grid.ColumnSpan="2"/>
+        <Label x:Name="SetupTesztLabel" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="91,247,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="205"/>
+
+    </Grid>
+</Window>

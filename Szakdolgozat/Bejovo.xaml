@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Szakdolgozat.Bejovo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Szakdolgozat"
+             mc:Ignorable="d" Width="816" Height="442">
+    <Grid Background="White" Height="444" VerticalAlignment="Top" Margin="-250,0,-250,-2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="18*"/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="ItemListView" HorizontalAlignment="Left" Height="248" Margin="22,41,0,0" VerticalAlignment="Top" Width="468" BorderBrush="Black" SelectedValuePath="id" SelectionChanged="ItemListView_SelectionChanged" Grid.RowSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="40" DisplayMemberBinding="{Binding id}"/>
+                    <GridViewColumn Header="Név" Width="115" DisplayMemberBinding="{Binding nev}"/>
+                    <GridViewColumn Header="Kategória" Width="100" DisplayMemberBinding="{Binding kategoria}"/>
+                    <GridViewColumn Header="Leírás" Width="200" DisplayMemberBinding="{Binding leiras}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="bejovoItemTextBox" HorizontalAlignment="Left" Height="22" Margin="198,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" SpellCheck.IsEnabled="True" IsEnabled="False" Grid.Row="1"/>
+        <Label Content="Bejövő tranzakció hozzáadás" HorizontalAlignment="Left" Margin="346,8,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tárgy*:" HorizontalAlignment="Left" Margin="120,70,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label Content="Darabszám*:" HorizontalAlignment="Left" Margin="91,123,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Slider x:Name="DarabSlider" HorizontalAlignment="Left" Margin="199,129,0,0" VerticalAlignment="Top" Maximum="100" Width="200" ValueChanged="Slider_ValueChanged" SmallChange="1" Grid.Row="1"/>
+        <Label x:Name="bejovoDarabLabel" Content="0" HorizontalAlignment="Left" Margin="261,157,0,0" VerticalAlignment="Top" IsEnabled="False" Width="48" HorizontalContentAlignment="Center" Grid.Row="1"/>
+        <Button x:Name="MinuszDarabButton" Content="-" HorizontalAlignment="Left" Margin="233,160,0,0" VerticalAlignment="Top" Width="24" Click="MinuszDarabButton_Click" Grid.Row="1"/>
+        <Button x:Name="PlusszDarabButton" Content="+" HorizontalAlignment="Left" Margin="315,160,0,0" VerticalAlignment="Top" Width="22" Click="PlusszDarabButton_Click" Grid.Row="1"/>
+        <Label Content="Teljesítve*:" HorizontalAlignment="Left" Margin="454,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.258,-0.231" Grid.Row="1"/>
+        <CheckBox x:Name="TeljesitveCheckBox" Content="Igen" HorizontalAlignment="Left" Margin="541,137,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Button x:Name="BejovoFelvetelButton" Content="Hozzáadás" HorizontalAlignment="Left" Margin="676,137,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.427,0.3" Click="BejovoFelvetel_Click" Grid.Row="1"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="430" Margin="10,10,0,0" VerticalAlignment="Top" Width="804" Grid.RowSpan="2"/>
+        <ListView x:Name="BeTranzListView" HorizontalAlignment="Left" Height="430" Margin="819,10,0,0" VerticalAlignment="Top" Width="487" BorderBrush="Black" SelectedValuePath="id" Grid.RowSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="40" DisplayMemberBinding="{Binding Path=id}"/>
+                    <GridViewColumn Header="Darab" Width="40" DisplayMemberBinding="{Binding Path=darabszam}"/>
+                    <GridViewColumn Header="Tárgy" Width="50" DisplayMemberBinding="{Binding Path=item_id}"/>
+                    <GridViewColumn Header="Partner" Width="50" DisplayMemberBinding="{Binding Path=partner_id}"/>
+                    <GridViewColumn Header="Felvéve" Width="148" DisplayMemberBinding="{Binding Path=idopont}"/>
+                    <GridViewColumn Header="Teljesítve" Width="148" DisplayMemberBinding="{Binding Path=ido_teljesitve}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="bejovoPartnerTextBox" HorizontalAlignment="Left" Height="22" Margin="594,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" SpellCheck.IsEnabled="True" IsEnabled="False" Grid.Row="1"/>
+        <Label Content="Partner*:" HorizontalAlignment="Left" Margin="516,70,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <ListView x:Name="PartnerekListView" HorizontalAlignment="Left" Height="248" Margin="512,41,0,0" VerticalAlignment="Top" Width="288" BorderBrush="Black" SelectionChanged="PartnerekListView_SelectionChanged" Grid.RowSpan="2">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="40" DisplayMemberBinding="{Binding id}"/>
+                    <GridViewColumn Header="Név" Width="110" DisplayMemberBinding="{Binding nev}"/>
+                    <GridViewColumn Header="E-mail" Width="125" DisplayMemberBinding="{Binding email}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>

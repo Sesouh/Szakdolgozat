@@ -1,0 +1,64 @@
+﻿<Window x:Name="___No_Name_" x:Class="Szakdolgozat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Szakdolgozat"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowState="Maximized" Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Felhasználó név:" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top"/>
+        <Label Content="Jogosultság:" HorizontalAlignment="Left" Margin="230,1,0,0" VerticalAlignment="Top"/>
+        <TabControl x:Name="FunkciokTabControl" HorizontalContentAlignment="Stretch"  Margin="10,32,10,0" Padding="10,10,10,10" VerticalAlignment="Top" IsTabStop="True" Background="{x:Null}" SelectionChanged="FunkciokTabControl_SelectionChanged" SelectedIndex="-1">
+            <TabItem x:Name="bejovoTab" Header="Bejövő hozzáadás" Background="#FFE5E5E5">
+                <Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="kimenoTab" Header="Kimenő hozzáadás" Background="#FFE5E5E5">
+                <Grid>
+                    
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="itemsTab" Header="Tárgyak" Background="#FFE5E5E5">
+                <Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="partnersTab" Header="Partnerek" Background="#FFE5E5E5">
+                <Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="rendelesekTab" Header="Rendelések" Background="#FFE5E5E5">
+                <Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="elozmenyekTab" Header="Előzmények" Background="#FFE5E5E5">
+                <Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="felhasznalokTab" Header="Felhasználók" Background="#FFE5E5E5">
+                <Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="beallitasokTab" Header="Beállítások" Background="#FFE5E5E5">
+                <Grid>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="LogoutButton" Content="Kijelentkezés" HorizontalAlignment="Right" Margin="0,5,10,0" VerticalAlignment="Top" Width="75" Click="LogoutButton_Click"/>
+        <Label x:Name="FelhasznaloNevLabel" Content="USER_NAME" HorizontalAlignment="Left" Margin="106,2,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="FelhasznaloJogosultsagLabel" Content="USER_PERM" HorizontalAlignment="Left" Margin="305,2,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

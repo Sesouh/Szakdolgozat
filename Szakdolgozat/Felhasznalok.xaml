@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="Szakdolgozat.Felhasznalok"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Szakdolgozat"
+             mc:Ignorable="d" Width="918.5" Height="428.5">
+    <Grid x:Name="___No_Name_" Background="White" Height="429" VerticalAlignment="Top">
+        <Label Content="Felhasználó felvétel" HorizontalAlignment="Left" Margin="133,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.487,0.654"/>
+        <Label Content="Név*:" HorizontalAlignment="Left" Margin="108,50,0,0" VerticalAlignment="Top"/>
+        <Label Content="jelszó*:" HorizontalAlignment="Left" Margin="100,80,0,0" VerticalAlignment="Top"/>
+        <Label Content="jelszó(2x)*:" HorizontalAlignment="Left" Margin="80,112,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="CreateNevTextBox" HorizontalAlignment="Left" Height="22" Margin="165,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="5"/>
+        <PasswordBox x:Name="CreatePasswordBox" HorizontalAlignment="Left" Margin="165,84,0,0" VerticalAlignment="Top" Width="120" Height="22" TabIndex="6"/>
+        <PasswordBox x:Name="CreateMegegyszerPasswordBox" HorizontalAlignment="Left" Margin="165,114,0,0" VerticalAlignment="Top" Width="120" Height="22" TabIndex="7"/>
+        <Button x:Name="CreatLetrehozButton" Content="Létrehozás" HorizontalAlignment="Left" Margin="165,184,0,0" VerticalAlignment="Top" Width="75" TabIndex="8" Background="#FFE5E5E5" Click="CreatLetrehozButton_Click"/>
+        <ComboBox x:Name="CreateJogComboBox" HorizontalAlignment="Left" Margin="165,144,0,0" VerticalAlignment="Top" Width="120">
+        </ComboBox>
+        <Label Content="Jogosultság*:" HorizontalAlignment="Left" Margin="66,140,0,0" VerticalAlignment="Top"/>
+        <Label Content="Felhasználó törlés" HorizontalAlignment="Left" Margin="768,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.487,0.654" Width="118"/>
+        <ComboBox x:Name="DeleteComboBox" HorizontalAlignment="Left" Margin="750,93,0,0" VerticalAlignment="Top" Width="136">
+            <ListBoxItem Content="user"/>
+            <ListBoxItem Content="moderator"/>
+        </ComboBox>
+        <CheckBox x:Name="DeleteCheckBox" Content="Biztosan törlöm" HorizontalAlignment="Left" Margin="772,127,0,0" VerticalAlignment="Top" Width="117" Click="DeleteCheckBox_Click"/>
+        <Button x:Name="DeleteButton" Content="Törlés" HorizontalAlignment="Left" Margin="783,167,0,0" VerticalAlignment="Top" Width="85" Click="DeleteButton_Click"/>
+        <Label Content="Felhasználó aktivitás módosítás" HorizontalAlignment="Left" Margin="10,251,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.487,0.654"/>
+        <ComboBox x:Name="InactiveComboBox" HorizontalAlignment="Left" Margin="41,303,0,0" VerticalAlignment="Top" Width="120">
+            <ListBoxItem Content="user"/>
+            <ListBoxItem Content="moderator"/>
+        </ComboBox>
+        <CheckBox x:Name="InactiveCheckBox" Content="Biztosan módosítom" HorizontalAlignment="Left" Margin="33,333,0,0" VerticalAlignment="Top" Click="InactiveCheckBox_Click"/>
+        <Button x:Name="InactiveButton" Content="Módosítás" HorizontalAlignment="Left" Margin="66,369,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.28,0.15" Click="InactiveButton_Click"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="160" Margin="10,251,0,0" VerticalAlignment="Top" Width="176"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="238" Margin="734,8,0,0" VerticalAlignment="Top" Width="173"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="238" Margin="10,8,0,0" VerticalAlignment="Top" Width="350"/>
+        <ListView x:Name="FelhasznalokListView" HorizontalAlignment="Left" Height="238" Margin="365,8,0,0" VerticalAlignment="Top" Width="364" BorderBrush="Black">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Path=id}"/>
+                    <GridViewColumn Header="Név" Width="120" DisplayMemberBinding="{Binding Path=felhasznalonev}"/>
+                    <GridViewColumn Header="Jogosultság" Width="100" DisplayMemberBinding="{Binding Path=jogosultsag}"/>
+                    <GridViewColumn Header="Aktivitás" Width="80" DisplayMemberBinding="{Binding Path=aktivitas}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Felhasználó jogosultság módosítás" HorizontalAlignment="Left" Margin="206,251,0,0" VerticalAlignment="Top"/>
+        <Label Content="Név:" HorizontalAlignment="Left" Margin="218,283,0,0" VerticalAlignment="Top"/>
+        <Label Content="Új jogosultság:" HorizontalAlignment="Left" Margin="218,313,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="JogModositCheckBox" Content="Biztosan módosítom" HorizontalAlignment="Left" Margin="241,345,0,0" VerticalAlignment="Top" Click="JogModositCheckBox_Click"/>
+        <Button x:Name="JogModositButton" Content="Módosítás" HorizontalAlignment="Left" Margin="291,369,0,0" VerticalAlignment="Top" Width="75" Click="JogModositButton_Click"/>
+        <ComboBox x:Name="JogNevComboBox" HorizontalAlignment="Left" Margin="261,287,0,0" VerticalAlignment="Top" Width="139"/>
+        <ComboBox x:Name="JogJogComboBox" HorizontalAlignment="Left" Margin="311,317,0,0" VerticalAlignment="Top" Width="89"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="160" Margin="191,251,0,0" VerticalAlignment="Top" Width="231"/>
+        <Label Content="Felhasználó jelszó módosítás" HorizontalAlignment="Left" Margin="602,251,0,0" VerticalAlignment="Top"/>
+        <Label Content="Felhasználó Kiválasztása" HorizontalAlignment="Left" Margin="473,285,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="JelszoNevComboBox" HorizontalAlignment="Left" Margin="473,317,0,0" VerticalAlignment="Top" Width="137"/>
+        <Label Content="Régi jelszó*:" HorizontalAlignment="Left" Margin="657,285,0,0" VerticalAlignment="Top"/>
+        <Label Content="Új jelszó*:" HorizontalAlignment="Left" Margin="669,313,0,0" VerticalAlignment="Top"/>
+        <Label Content="Új jelszó(2x)*:" HorizontalAlignment="Left" Margin="650,339,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="RegiJelszoModTextBox" HorizontalAlignment="Left" Height="24" Margin="740,285,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.425,0.783"/>
+        <PasswordBox x:Name="UjJelszoModTextBox" HorizontalAlignment="Left" Height="24" Margin="740,313,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.425,0.783"/>
+        <PasswordBox x:Name="UjMegegyszerJelszoModTextBox" HorizontalAlignment="Left" Height="24" Margin="740,341,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.425,0.783"/>
+        <CheckBox x:Name="UjJelszoCheckBox" Content="Biztosan módosítom" HorizontalAlignment="Left" Margin="473,349,0,0" VerticalAlignment="Top" Click="UjJelszoCheckBox_Click"/>
+        <Button x:Name="JelszoModButton" Content="Módosítás" HorizontalAlignment="Left" Margin="495,369,0,0" VerticalAlignment="Top" Width="75" Click="JelszoModButton_Click"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="160" Margin="427,251,0,0" VerticalAlignment="Top" Width="480"/>
+    </Grid>
+</UserControl>

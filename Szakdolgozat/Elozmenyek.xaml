@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Szakdolgozat.Elozmenyek"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Szakdolgozat"
+             mc:Ignorable="d" Width="1065" Height="auto">
+    <Grid Background="White" Margin="10,10,0,10">
+        <ListView x:Name="ElozmenyekListView" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" BorderBrush="Black">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Path=id}"/>
+                    <GridViewColumn Header="Időpont" Width="200" DisplayMemberBinding="{Binding Path=idopont}"/>
+                    <GridViewColumn Header="Felhasználó" Width="175" DisplayMemberBinding="{Binding Path=felhasznalonev}"/>
+                    <GridViewColumn Header="Művelet" Width="200" DisplayMemberBinding="{Binding Path=muvelet}"/>
+                    <GridViewColumn Header="Részletek" Width="400" DisplayMemberBinding="{Binding Path=reszletek}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>
