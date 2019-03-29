@@ -123,7 +123,7 @@ namespace Szakdolgozat
                     Felhasznalo aktualis_felhasznalo = new Felhasznalo(felhasznalonev, jelszo, jogosultsag, aktivitas, id);
 
 
-                    if (aktualis_felhasznalo.jogosultsag != "admin")
+                    if (aktualis_felhasznalo.jogosultsag != "admin" && aktualis_felhasznalo.felhasznalonev != MainWindow.main_nev)
                     {
                         DeleteComboBox.Items.Add(aktualis_felhasznalo.felhasznalonev);
                         InactiveComboBox.Items.Add(aktualis_felhasznalo.felhasznalonev);
