@@ -13,7 +13,6 @@
         <TextBox x:Name="AdminCreatAdminNevTextBox" HorizontalAlignment="Left" Height="23" Margin="185,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="5"/>
         <PasswordBox x:Name="AdminCreatAdminPasswordBox" HorizontalAlignment="Left" Margin="185,56,0,0" VerticalAlignment="Top" Width="120" Height="23" TabIndex="6"/>
         <PasswordBox x:Name="AdminCreatAdminMegegyszerPasswordBox" HorizontalAlignment="Left" Margin="185,87,0,0" VerticalAlignment="Top" Width="120" Height="23" TabIndex="7"/>
-        <Button x:Name="AdminCreatHelpButton" Content="Segítség" HorizontalAlignment="Left" Margin="89,135,0,0" VerticalAlignment="Top" Width="75" TabIndex="9"/>
         <Button x:Name="AdminCreatLetrehozButton" Content="Létrehozás" HorizontalAlignment="Left" Margin="185,135,0,0" VerticalAlignment="Top" Width="75" TabIndex="8" Click="AdminCreatLetrehozButton_Click"/>
 
     </Grid>

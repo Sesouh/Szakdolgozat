@@ -112,6 +112,7 @@ namespace Szakdolgozat
         {
             if (!File.Exists("config.txt"))
             {
+                MessageBox.Show("Nem található a 'config.txt' állomány!");
                 Setup setup_window = new Setup();
                 setup_window.ShowDialog();
             }
