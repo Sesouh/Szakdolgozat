@@ -66,6 +66,19 @@ namespace Szakdolgozat
             {
                 conn = new MySqlConnection(File.ReadAllText("config.txt"));
                 conn.Open();
+                string ellen = "SELECT COUNT(*) FROM felhasznalok WHERE felhasznalonev = '"+ CreateNevTextBox.Text + "';";
+                var cmd_sql_ellen = conn.CreateCommand();
+                cmd_sql_ellen.CommandText = ellen;
+                long ellen_result = (long)cmd_sql_ellen.ExecuteScalar();
+                conn.Close();
+                if (ellen_result > 0)
+                {
+                    MessageBox.Show("A megadott felhasználónévvel már létezik egy felhasználó!");
+                    return;
+                }
+
+                conn = new MySqlConnection(File.ReadAllText("config.txt"));
+                conn.Open();
 
                 string commands = @"INSERT INTO `felhasznalok` 
                             (`id`, `felhasznalonev`, `jelszo`, `aktivitas`, `jogosultsag`)
@@ -74,6 +87,7 @@ namespace Szakdolgozat
                 var cmd_sql_commands = conn.CreateCommand();
                 cmd_sql_commands.CommandText = commands;
                 int result = cmd_sql_commands.ExecuteNonQuery();
+
                 if (result > 0)
                 {
                     MessageBox.Show("Sikeres felvétel!");

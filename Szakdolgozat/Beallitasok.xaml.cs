@@ -30,6 +30,7 @@ namespace Szakdolgozat
 
         private void ImportButton_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("A sikeres importálás után újra fog indulni az alkalmazás!");
             try
             {
                 Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
@@ -55,8 +56,12 @@ namespace Szakdolgozat
             catch (Exception ex)
             {
                 MessageBox.Show("Sikertelen importálás: " + ex.ToString());
+                return;
             }
             MessageBox.Show("Sikeres importálás!");
+            MessageBox.Show("Az alkalmazás újraindul!");
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
         }
 
         private void ExportButton_Click(object sender, RoutedEventArgs e)

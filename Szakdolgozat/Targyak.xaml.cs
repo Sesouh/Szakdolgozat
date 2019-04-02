@@ -93,6 +93,19 @@ namespace Szakdolgozat
             {
                 conn = new MySqlConnection(File.ReadAllText("config.txt"));
                 conn.Open();
+                string ellen = "SELECT COUNT(*) FROM item WHERE nev = '" + ItemNevTextBox.Text + "';";
+                var cmd_sql_ellen = conn.CreateCommand();
+                cmd_sql_ellen.CommandText = ellen;
+                long ellen_result = (long)cmd_sql_ellen.ExecuteScalar();
+                conn.Close();
+                if (ellen_result > 0)
+                {
+                    MessageBox.Show("A megadott névvel már létezik egy tárgy!");
+                    return;
+                }
+
+                conn = new MySqlConnection(File.ReadAllText("config.txt"));
+                conn.Open();
 
                 string commands = @"CALL item_insert('" + ItemNevTextBox.Text +
                                                 "', '" + ItemLeirasTextBox.Text +
@@ -117,6 +130,19 @@ namespace Szakdolgozat
         {
             if (KategoriaNevTextBox.Text != "")
             {
+                conn = new MySqlConnection(File.ReadAllText("config.txt"));
+                conn.Open();
+                string ellen = "SELECT COUNT(*) FROM kategoria WHERE nev = '" + KategoriaNevTextBox.Text + "';";
+                var cmd_sql_ellen = conn.CreateCommand();
+                cmd_sql_ellen.CommandText = ellen;
+                long ellen_result = (long)cmd_sql_ellen.ExecuteScalar();
+                conn.Close();
+                if (ellen_result > 0)
+                {
+                    MessageBox.Show("A megadott kategória már létezik!");
+                    return;
+                }
+
                 conn = new MySqlConnection(File.ReadAllText("config.txt"));
                 conn.Open();
 

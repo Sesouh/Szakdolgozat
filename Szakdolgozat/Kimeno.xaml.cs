@@ -127,7 +127,6 @@ namespace Szakdolgozat
             {
                 MessageBox.Show("A *-al jelzett mezőket ki kell tölteni!");
             }
-            frissit();
         }
 
         public void frissit()
